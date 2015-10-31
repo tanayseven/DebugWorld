@@ -13,6 +13,10 @@ var getJSON = function(url) {
 				reject(status);
 			}
 		};
+		xhr.onerror = function() {
+			document.getElementById("errorMessage").className = "uk-width-9-10 uk-container-center";
+			document.getElementById("pageContent").className = "uk-hidden";
+		};
 		xhr.send();
 	});
 };
@@ -41,7 +45,7 @@ function getQueryParams(qs) {
 var query = getQueryParams(document.location.search);
 
 //*
-getJSON('http://debugworld.herokuapp.com/fetch_issue?id=' + query.id).then(function(json) {
+getJSON('htsstp://debugworld.herokuapp.com/fetch_issue?id=' + query.id).then(function(json) {
 	var data = json[0];
 	var html = "";
 
@@ -76,7 +80,8 @@ getJSON('http://debugworld.herokuapp.com/fetch_issue?id=' + query.id).then(funct
 
 	showMap(data.location.latitude, data.location.longitude);
 }, function(status) {
-	alert('Something went wrong.');
+	document.getElementById("errorMessage").className = "uk-width-9-10 uk-container-center";
+	document.getElementById("pageContent").className = "uk-hidden";
 });
 //*/
 

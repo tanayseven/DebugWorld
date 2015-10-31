@@ -8,7 +8,13 @@
 </head>
 <body>
     <div class="uk-grid">
-        <div class="uk-width-9-10 uk-container-center">
+        <div class="uk-width-9-10 uk-container-center uk-hidden" id="errorMessage">
+            <div class="uk-alert uk-alert-danger uk-margin-top" >
+                <p>Something went wrong. Please try later.</p>
+            </div>
+            <p><a href="">Refresh list</a></p>
+        </div>
+        <div class="uk-width-9-10 uk-container-center" id="pageContent">
             <h1>List of the issues</h1>
             <p>We have <span id="nbIssues">42</span> issues. <a href="submit_issue.html">Click here</a> to submit an issue.</p>
             <div class="uk-overflow-container">

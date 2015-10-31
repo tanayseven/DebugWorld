@@ -11,6 +11,10 @@ var getJSON = function(url) {
 				reject(status);
 			}
 		};
+		xhr.onerror = function() {
+			document.getElementById("errorMessage").className = "uk-width-9-10 uk-container-center";
+			document.getElementById("pageContent").className = "uk-hidden";
+		};
 		xhr.send();
 	});
 };
@@ -28,6 +32,7 @@ getJSON('http://debugworld.herokuapp.com/fetch_issues').then(function(data) {
 	document.getElementById("issuesList").innerHTML = html;
 	document.getElementById("nbIssues").innerText = data.length;
 }, function(status) {
-	alert('Something went wrong.');
+	document.getElementById("errorMessage").className = "uk-width-9-10 uk-container-center";
+	document.getElementById("pageContent").className = "uk-hidden";
 });
 //*/
