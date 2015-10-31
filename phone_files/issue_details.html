@@ -10,7 +10,7 @@
     <div class="uk-grid">
         <div class="uk-width-9-10 uk-container-center">
             <h1><span id="issueTitle">Issue Title</span> <small>#<span id="issueId">4242</span></small></h1>
-            <p class="uk-text-muted">Submited by <a href="#">username</a> on 01/01/1970.</p>
+            <p class="uk-text-muted">Submited by <a href="#" id="creatorUsername">username</a> on <span id="issueDateCreated">01/01/1970</span>.</p>
             <h2><span class="uk-icon-file"></span> Description</h2>
             <div id="issueDescription">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quae deleniti cum ea alias corporis quibusdam sed amet repellendus eligendi id quo fugiat, iure autem cupiditate similique, facilis inventore provident?</p>
@@ -28,45 +28,49 @@
             <h3><span class="uk-icon-heart-o"></span> Vote!</h3>
             <p><button class="uk-button uk-button-success uk-width-1-2"><span class="uk-icon-thumbs-o-up"></span> Real issue<br/>(<span id="issueVotesUp">0</span>)</button><button class="uk-button uk-button-danger uk-width-1-2"><span class="uk-icon-thumbs-o-down"></span> Not a problem<br/>(<span id="issueVotesDown">0</span>)</button></p>
             <h3><span class="uk-icon-comments-o"></span> Comment!</h3>
-            <article class="uk-comment uk-panel-box uk-margin-bottom">
-                <header class="uk-comment-header">
-                    <h4 class="uk-comment-title">Username</h4>
-                    <div class="uk-comment-meta">date | #</div>
-                </header>
-                <div class="uk-comment-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa quod velit consectetur expedita. Exercitationem dolorum necessitatibus, tempora quae, ipsum maxime dolore rerum amet modi, minus earum mollitia laborum odio ad.</p>
-                </div>
-            </article>
-            <article class="uk-comment uk-panel-box uk-margin-bottom">
-                <header class="uk-comment-header">
-                    <h4 class="uk-comment-title">Username</h4>
-                    <div class="uk-comment-meta">date | #</div>
-                </header>
-                <div class="uk-comment-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa quod velit consectetur expedita. Exercitationem dolorum necessitatibus, tempora quae, ipsum maxime dolore rerum amet modi, minus earum mollitia laborum odio ad.</p>
-                </div>
-            </article>
-            <article class="uk-comment uk-panel-box uk-panel-box-primary uk-margin-bottom">
-                <header class="uk-comment-header">
-                    <h4 class="uk-comment-title">Username</h4>
-                    <div class="uk-comment-meta">date | #</div>
-                </header>
-                <div class="uk-comment-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa quod velit consectetur expedita. Exercitationem dolorum necessitatibus, tempora quae, ipsum maxime dolore rerum amet modi, minus earum mollitia laborum odio ad.</p>
-                </div>
-            </article>
-            <article class="uk-comment uk-panel-box uk-margin-bottom">
-                <header class="uk-comment-header">
-                    <h4 class="uk-comment-title">Username</h4>
-                    <div class="uk-comment-meta">date | #</div>
-                </header>
-                <div class="uk-comment-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa quod velit consectetur expedita. Exercitationem dolorum necessitatibus, tempora quae, ipsum maxime dolore rerum amet modi, minus earum mollitia laborum odio ad.</p>
-                </div>
-            </article>
+            <div id="issueComments">
+                <article class="uk-comment uk-panel-box uk-margin-bottom">
+                    <header class="uk-comment-header">
+                        <h4 class="uk-comment-title">Username</h4>
+                        <div class="uk-comment-meta">date | #</div>
+                    </header>
+                    <div class="uk-comment-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa quod velit consectetur expedita. Exercitationem dolorum necessitatibus, tempora quae, ipsum maxime dolore rerum amet modi, minus earum mollitia laborum odio ad.</p>
+                    </div>
+                </article>
+                <article class="uk-comment uk-panel-box uk-margin-bottom">
+                    <header class="uk-comment-header">
+                        <h4 class="uk-comment-title">Username</h4>
+                        <div class="uk-comment-meta">date | #</div>
+                    </header>
+                    <div class="uk-comment-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa quod velit consectetur expedita. Exercitationem dolorum necessitatibus, tempora quae, ipsum maxime dolore rerum amet modi, minus earum mollitia laborum odio ad.</p>
+                    </div>
+                </article>
+                <article class="uk-comment uk-panel-box uk-panel-box-primary uk-margin-bottom">
+                    <header class="uk-comment-header">
+                        <h4 class="uk-comment-title">Username</h4>
+                        <div class="uk-comment-meta">date | #</div>
+                    </header>
+                    <div class="uk-comment-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa quod velit consectetur expedita. Exercitationem dolorum necessitatibus, tempora quae, ipsum maxime dolore rerum amet modi, minus earum mollitia laborum odio ad.</p>
+                    </div>
+                </article>
+                <article class="uk-comment uk-panel-box uk-margin-bottom">
+                    <header class="uk-comment-header">
+                        <h4 class="uk-comment-title">Username</h4>
+                        <div class="uk-comment-meta">date | #</div>
+                    </header>
+                    <div class="uk-comment-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa quod velit consectetur expedita. Exercitationem dolorum necessitatibus, tempora quae, ipsum maxime dolore rerum amet modi, minus earum mollitia laborum odio ad.</p>
+                    </div>
+                </article>
+            </div>
         </div>
     </div>
     <script src="js/jquery.js"></script>
     <script src="js/uikit.min.js"></script>
+    <script src="sample_issue.js"></script> <!-- to delete -->
+    <script src="js/issue_details.js"></script>
 </body>
 </html>
