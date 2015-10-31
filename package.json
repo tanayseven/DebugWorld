@@ -1,0 +1,33 @@
+{
+  "name": "DebugEarth",
+  "version": "0.0.0",
+  "description": "App that stores reported issues from the world and helps solve them",
+  "main": "app.js",
+
+  "author": "Tanay Prabhu Desai",
+  "contributors":[
+    {
+      "name":"Bernard Jesop",
+      "email":""
+    },
+    {
+      "name":"Max Prudhomme",
+      "email":""
+    },
+    {
+      "name":"Ravikiran Kadannavar",
+      "email":""
+    }
+  ],
+  "license": "MIT",
+
+  "dependencies": {
+    "express": "~4.6.1",
+    "body-parser": "~1.14.0",
+    "jade": "~1.9.2",
+    "habitat": "~3.0.0",
+    "mongodb": "~2.0.33",
+    "monk": "~1.0.1"
+  }
+}
+
