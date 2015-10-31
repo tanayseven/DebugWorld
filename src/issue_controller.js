@@ -23,8 +23,8 @@ IssueController.prototype.fetch_issue = function (id,callback) {
   });
 };
 
-IssueController.prototype.fetch_all_issues = function (callback) {
-  this.issue.find({}, '-comments', function (err, docs) {
+IssueController.prototype.fetch_issues = function (callback) {
+  this.issue.find({}, 'name dateCreated votes', function (err, docs) {
     if (err) throw err;
     callback(docs);
   });

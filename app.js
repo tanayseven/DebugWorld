@@ -33,9 +33,9 @@ app.get('/fetch_issue',function (req,res) {
   ic.fetch_issue(req.query.id,function(i){res.header("Access-Control-Allow-Origin", "*");res.send(i);});
 });
 
-app.get('/fetch_all_issues', function (req, res) {
+app.get('/fetch_issues', function (req, res) {
   console.log("Debug Fetch");
-  ic.fetch_all_issues(function(i){res.send(i);});
+  ic.fetch_issues(function(i){res.send(i);});
 });
 
 var server = app.listen(port, function () {
