@@ -8,14 +8,19 @@
 </head>
 <body>
     <div class="uk-grid">
+        <div class="uk-width-9-10 uk-container-center" id="spinMessage">
+            <div class="uk-block uk-block-large">
+                <p class="uk-text-center uk-heading-large">Loading...<br /><span class="uk-icon-spinner uk-icon-spin"></span></p>
+            </div>
+        </div>
         <div class="uk-width-9-10 uk-container-center uk-hidden" id="errorMessage">
             <div class="uk-alert uk-alert-danger uk-margin-top">
                 <p>Something went wrong. Please try later.</p>
             </div>
-            <p><a href="">Refresh issue <span class="uk-icon-spinner uk-icon-spin"></span></a></p>
+            <p><a href="">Refresh issue</a></p>
             <p><a href="list_issues.html">&larr; Go back to the list of issues</a></p>
         </div>
-        <div class="uk-width-9-10 uk-container-center" id="pageContent">
+        <div class="uk-width-9-10 uk-container-center uk-hidden" id="pageContent">
             <h1><span id="issueTitle">Issue Title</span></h1>
             <p><a href="list_issues.html">&larr; Go back to the list of issues</a></p>
             <p class="uk-text-muted">Submited by <a href="#" id="creatorUsername">username</a> on <span id="issueDateCreated">01/01/1970</span>.</p>

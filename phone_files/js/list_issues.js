@@ -14,6 +14,7 @@ var getJSON = function(url) {
 		xhr.onerror = function() {
 			document.getElementById("errorMessage").className = "uk-width-9-10 uk-container-center";
 			document.getElementById("pageContent").className = "uk-hidden";
+			document.getElementById("spinMessage").className = "uk-hidden";
 		};
 		xhr.send();
 	});
@@ -31,8 +32,11 @@ getJSON('http://debugworld.herokuapp.com/fetch_issues').then(function(data) {
 	}
 	document.getElementById("issuesList").innerHTML = html;
 	document.getElementById("nbIssues").innerText = data.length;
+	document.getElementById("pageContent").className = "uk-width-9-10 uk-container-center";
+	document.getElementById("spinMessage").className = "uk-hidden";
 }, function(status) {
 	document.getElementById("errorMessage").className = "uk-width-9-10 uk-container-center";
 	document.getElementById("pageContent").className = "uk-hidden";
+	document.getElementById("spinMessage").className = "uk-hidden";
 });
 //*/

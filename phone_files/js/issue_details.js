@@ -16,6 +16,7 @@ var getJSON = function(url) {
 		xhr.onerror = function() {
 			document.getElementById("errorMessage").className = "uk-width-9-10 uk-container-center";
 			document.getElementById("pageContent").className = "uk-hidden";
+			document.getElementById("spinMessage").className = "uk-hidden";
 		};
 		xhr.send();
 	});
@@ -45,7 +46,7 @@ function getQueryParams(qs) {
 var query = getQueryParams(document.location.search);
 
 //*
-getJSON('htsstp://debugworld.herokuapp.com/fetch_issue?id=' + query.id).then(function(json) {
+getJSON('http://debugworld.herokuapp.com/fetch_issue?id=' + query.id).then(function(json) {
 	var data = json[0];
 	var html = "";
 
@@ -82,6 +83,7 @@ getJSON('htsstp://debugworld.herokuapp.com/fetch_issue?id=' + query.id).then(fun
 }, function(status) {
 	document.getElementById("errorMessage").className = "uk-width-9-10 uk-container-center";
 	document.getElementById("pageContent").className = "uk-hidden";
+	document.getElementById("spinMessage").className = "uk-hidden";
 });
 //*/
 
@@ -104,6 +106,8 @@ var showMap = function(latitude, longitude) {
 	var pin = new Microsoft.Maps.Pushpin(center, {icon: 'img/pin.png', width: 22, height: 38, draggable: false}); 
 
 	map.entities.push(pin);
+	document.getElementById("pageContent").className = "uk-width-9-10 uk-container-center";
+	document.getElementById("spinMessage").className = "uk-hidden";
 }
 
 
