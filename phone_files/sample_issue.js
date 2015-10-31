@@ -6,8 +6,8 @@ var data = {
 	"dateCreated": "1970-01-01",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui fuga neque tenetur numquam accusamus excepturi eum voluptate veniam dolores sed, suscipit! Facere voluptate dolorem possimus aspernatur, tempora dicta quod non.",
 	"location": {
-		"longitude": 50.4242,
-		"latitude": 42.5050,
+		"longitude": 74.7925818,
+		"latitude": 13.3513833,
 		"city": "Manipal",
 		"country": "India"
 	},

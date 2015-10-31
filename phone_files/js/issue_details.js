@@ -1,3 +1,5 @@
+var BING_key = "dP52B8BTBS36jgN6zNkk~CL_6KiRVf5NoTV_oOCAFbg~Ak_VUTbKMiNKir1o7S6L21-muFg8krWz2r7J697vvxNYGvoAH7Ne4U9n8_HawBiF";
+
 var getJSON = function(url) {
 	return new Promise(function(resolve, reject) {
 		var xhr = new XMLHttpRequest();
@@ -53,3 +55,24 @@ for (var i = 0; i < data.comments.length; ++i) {
 			</article>";
 }
 document.getElementById("issueComments").innerHTML = html;
+
+/*
+ * Maps
+ */
+
+var showMap = function(latitude, longitude) {
+	var map = new Microsoft.Maps.Map(document.getElementById("issueLocation"), 
+	{
+		credentials: BING_key,
+		center: new Microsoft.Maps.Location(latitude, longitude),
+		mapTypeId: Microsoft.Maps.MapTypeId.road,
+		zoom: 16,
+	});
+
+	var center = map.getCenter();
+	var pin = new Microsoft.Maps.Pushpin(center, {icon: 'img/pin.png', width: 22, height: 38, draggable: false}); 
+
+	map.entities.push(pin);
+}
+
+showMap(data.location.latitude, data.location.longitude);
