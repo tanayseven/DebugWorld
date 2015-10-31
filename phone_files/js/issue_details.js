@@ -16,8 +16,16 @@ var getJSON = function(url) {
 		xhr.send();
 	});
 };
+
+function CallRestService(request) {
+    var script = document.createElement("script");
+    script.setAttribute("type", "text/javascript");
+    script.setAttribute("src", request);
+    document.body.appendChild(script);
+}
+
 /*
-getJSON('http://localhost/issue1.json').then(function(json) {
+//getJSON('http://localhost/issue1.json').then(function(json) {
 	var data = json.result;
 }, function(status) {
 	alert('Something went wrong.');
@@ -76,3 +84,20 @@ var showMap = function(latitude, longitude) {
 }
 
 showMap(data.location.latitude, data.location.longitude);
+
+
+var getCityAndCountry = function(latitude, longitude, a) {
+	var url = "http://dev.virtualearth.net/REST/v1/Locations/" + latitude + "," + longitude + "?o=json&jsonp=GeocodeCallback&key=" + BING_key;
+	CallRestService(url);
+}
+
+var a = {"city":null, "country":null};
+
+function GeocodeCallback(json) {
+	var data = json.resourceSets[0].resources[0].address;
+	a.country = data.countryRegion;
+	a.city = data.locality;
+	console.log(a);
+}
+
+getCityAndCountry(data.location.latitude, data.location.longitude);
