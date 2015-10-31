@@ -30,7 +30,7 @@ app.post('/save_issue', function (req,res) {
 
 app.get('/fetch_issue',function (req,res) {
   console.log('Fetching issue...');
-  ic.fetch_issue('asd',function(i){res.send(i);console.log(i);});
+  ic.fetch_issue(req.query.id,function(i){res.header("Access-Control-Allow-Origin", "*");res.send(i);});
 });
 
 var server = app.listen(port, function () {

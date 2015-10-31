@@ -15,8 +15,10 @@ IssueController.prototype.save_issue = function(data) {
   });
 };
 
-IssueController.prototype.fetch_issue = function (title,callback) {
-  this.issue.find({},function (err,docs) {
+IssueController.prototype.fetch_issue = function (id,callback) {
+  id = id.toString();
+  console.log(id);
+  this.issue.find({_id:id},function (err,docs) {
     if (err) throw err;
     callback(docs);
   });
