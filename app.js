@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 var reply = function(res, i) {
-  res.header("Access-Control-Allow-Origin", "*"); res.send(i);  
+  res.header("Access-Control-Allow-Origin", "*"); res.send(i);
 };
 
 app.get('/', function (req, res) {
@@ -40,6 +40,11 @@ app.get('/fetch_issue',function (req,res) {
 app.get('/fetch_issues', function (req, res) {
   console.log("Debug Fetch");
   ic.fetch_issues(function(i){reply(res, i);});
+});
+
+app.post('/vote', function (req, res) {
+  console.log("Vote");
+  ic.vote_issue(req.body,function(i){reply(res, i);});
 });
 
 var server = app.listen(port, function () {

@@ -23,6 +23,33 @@ IssueController.prototype.fetch_issue = function (id,callback) {
   });
 };
 
+IssueController.prototype.vote_issue = function (data,callback) {
+  var id = data._id.toString();
+  var up = (data.up === 'true');
+  var res = {success:'false'};
+  console.log("id" + id + ' ' + "up" + up);
+  if (up)
+  {
+    this.issue.findAndModify({
+      query: {_id:id},
+      update: { $inc: {"votes.up":1}}},
+      function (err,docs) {
+        if (err) throw err;
+        callback({success:'true'});
+      }
+    );
+  } else {
+    this.issue.findAndModify({
+      query: {_id:id},
+      update: { $inc: {"votes.down":1}}},
+      function (err,docs) {
+        if (err) throw err;
+        callback({success:'true'});
+      }
+    );
+  }
+};
+
 IssueController.prototype.fetch_issues = function (callback) {
   this.issue.find({}, 'name dateCreated votes', function (err, docs) {
     if (err) throw err;
