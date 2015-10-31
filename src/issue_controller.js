@@ -1,4 +1,4 @@
-var connString = 'mongodb://127.0.0.1:27017/debugworld';
+var connString = process.env.DB_CONN_STRING || 'mongodb://127.0.0.1:27017/debugworld';
 var mongo = require('mongodb');
 var db = require('monk')(connString);
 
@@ -15,8 +15,16 @@ IssueController.prototype.save_issue = function(data) {
   });
 };
 
-IssueController.prototype.fetch_issue = function (title,callback) {
-  this.issue.find({},function (err,docs) {
+IssueController.prototype.fetch_issue = function (id,callback) {
+  id = id.toString();
+  this.issue.find({_id:id},function (err,docs) {
+    if (err) throw err;
+    callback(docs);
+  });
+};
+
+IssueController.prototype.fetch_issues = function (callback) {
+  this.issue.find({}, 'name dateCreated votes', function (err, docs) {
     if (err) throw err;
     callback(docs);
   });

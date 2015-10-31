@@ -18,10 +18,7 @@ var data = {
 		{"id": 4, "value": "sit"},
 		{"id": 5, "value": "amet"},
 	],
-	"votes": {
-		"up": 42,
-		"down": 2
-	},
+	"votes": 42,
 	"comments": [
 		{
 			"id": 87,
