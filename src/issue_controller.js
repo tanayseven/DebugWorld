@@ -1,4 +1,4 @@
-var connString = 'mongodb://127.0.0.1:27017/debugworld';
+var connString = process.env.DB_CONN_STRING || 'mongodb://127.0.0.1:27017/debugworld';
 var mongo = require('mongodb');
 var db = require('monk')(connString);
 
