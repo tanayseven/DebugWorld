@@ -18,6 +18,10 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+var reply = function(res, i) {
+  res.header("Access-Control-Allow-Origin", "*"); res.send(i);  
+};
+
 app.get('/', function (req, res) {
   console.log("Received / request");
   res.send('Hello World');
@@ -30,12 +34,12 @@ app.post('/save_issue', function (req,res) {
 
 app.get('/fetch_issue',function (req,res) {
   console.log('Fetching issue...');
-  ic.fetch_issue(req.query.id,function(i){res.header("Access-Control-Allow-Origin", "*");res.send(i);});
+  ic.fetch_issue(req.query.id,function(i){reply(res, i);});
 });
 
 app.get('/fetch_issues', function (req, res) {
   console.log("Debug Fetch");
-  ic.fetch_issues(function(i){res.send(i);});
+  ic.fetch_issues(function(i){reply(res, i);});
 });
 
 var server = app.listen(port, function () {
