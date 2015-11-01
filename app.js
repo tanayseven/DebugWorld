@@ -28,6 +28,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/save_issue', function (req,res) {
+  console.log("saving issue...");
   ic.save_issue(req.body, function (i) {reply(res,i);});
 });
 

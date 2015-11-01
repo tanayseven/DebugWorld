@@ -10,9 +10,11 @@ function IssueController(){
 }
 
 IssueController.prototype.save_issue = function(data,callback) {
+  console.log('Reached saving');
   this.issue.insert(data,function (err,doc) {
     if (err) throw err;
     callback({success:'true'});
+    console.log('Got it!');
   });
 };
 
