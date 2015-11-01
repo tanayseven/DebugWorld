@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>List of issues</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/uikit.min.css" />
+</head>
+<body>
+    <div class="uk-grid">
+        <div class="uk-width-9-10 uk-container-center" id="spinMessage">
+            <div class="uk-block uk-block-large">
+                <p class="uk-text-center uk-heading-large">Loading...<br /><span class="uk-icon-spinner uk-icon-spin"></span></p>
+            </div>
+        </div>
+        <div class="uk-width-9-10 uk-container-center uk-hidden" id="errorMessage">
+            <div class="uk-alert uk-alert-danger uk-margin-top" >
+                <p>Something went wrong. Please try later.</p>
+            </div>
+            <p><a href="">Refresh list</a></p>
+        </div>
+        <div class="uk-width-9-10 uk-container-center uk-hidden" id="pageContent">
+            <h1>List of the issues</h1>
+            <p>We have <span id="nbIssues">42</span> issues. <a href="submit_issue.html">Click here</a> to submit an issue.</p>
+            <div class="uk-overflow-container">
+                <table class="uk-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Date Publication</th>
+                            <th>Votes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="issuesList">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/list_issues.js"></script>
+</body>
+</html>

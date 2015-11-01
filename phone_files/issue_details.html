@@ -8,8 +8,21 @@
 </head>
 <body>
     <div class="uk-grid">
-        <div class="uk-width-9-10 uk-container-center">
-            <h1><span id="issueTitle">Issue Title</span> <small>#<span id="issueId">4242</span></small></h1>
+        <div class="uk-width-9-10 uk-container-center" id="spinMessage">
+            <div class="uk-block uk-block-large">
+                <p class="uk-text-center uk-heading-large">Loading...<br /><span class="uk-icon-spinner uk-icon-spin"></span></p>
+            </div>
+        </div>
+        <div class="uk-width-9-10 uk-container-center uk-hidden" id="errorMessage">
+            <div class="uk-alert uk-alert-danger uk-margin-top">
+                <p>Something went wrong. Please try later.</p>
+            </div>
+            <p><a href="">Refresh issue</a></p>
+            <p><a href="list_issues.html">&larr; Go back to the list of issues</a></p>
+        </div>
+        <div class="uk-width-9-10 uk-container-center uk-hidden" id="pageContent">
+            <h1><span id="issueTitle">Issue Title</span></h1>
+            <p><a href="list_issues.html">&larr; Go back to the list of issues</a></p>
             <p class="uk-text-muted">Submited by <a href="#" id="creatorUsername">username</a> on <span id="issueDateCreated">01/01/1970</span>.</p>
             <h2><span class="uk-icon-file"></span> Description</h2>
             <div id="issueDescription">
@@ -26,7 +39,8 @@
             <h3><span class="uk-icon-share-square-o"></span> Share!</h3>
             <p><button class="uk-button uk-button-primary uk-width-1-2"><span class="uk-icon-facebook"></span> Facebook</button><button class="uk-button uk-width-1-2"><span class="uk-icon-twitter"></span> Twitter</button></p>
             <h3><span class="uk-icon-heart-o"></span> Vote!</h3>
-            <p><button class="uk-button uk-button-success uk-width-1-2"><span class="uk-icon-thumbs-o-up"></span> Real issue<br/>(<span id="issueVotesUp">0</span>)</button><button class="uk-button uk-button-danger uk-width-1-2"><span class="uk-icon-thumbs-o-down"></span> Not a problem<br/>(<span id="issueVotesDown">0</span>)</button></p>
+            <p><button class="uk-button uk-button-success uk-width-1-2" onclick="vote(true);"><span class="uk-icon-thumbs-o-up"></span> Real issue<br/>(<span id="issueVotesUp">0</span>)</button><button class="uk-button uk-button-danger uk-width-1-2" onclick="vote(false);"><span class="uk-icon-thumbs-o-down"></span> Not a problem<br/>(<span id="issueVotesDown">0</span>)</button></p>
+            <p><button class="uk-button uk-width-1-1"><span class="uk-icon-globe"></span> Problem solved<br/>(17)</button></p>
             <h3><span class="uk-icon-comments-o"></span> Comment!</h3>
             <div id="issueComments">
                 <article class="uk-comment uk-panel-box uk-margin-bottom">
