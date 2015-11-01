@@ -138,4 +138,17 @@ var vote = function(voteUp) {
 	xhr.open('POST', 'http://debugworld.herokuapp.com/vote', true);
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xhr.send("_id=" + query.id + "&up=" + voteUp);
+
+	if (voteUp === true) {
+		document.getElementById("issueVotesUp").innerText = parseInt(document.getElementById("issueVotesUp").innerText) + 1;
+	} else {
+		document.getElementById("issueVotesDown").innerText = parseInt(document.getElementById("issueVotesDown").innerText) + 1;
+	}
+	document.getElementById("issueVotesUp").parentNode.setAttribute("disabled", "disabled");
+	document.getElementById("issueVotesDown").parentNode.setAttribute("disabled", "disabled");
+}
+
+var resolve = function() {
+	document.getElementById("issueVotesSolved").innerText = parseInt(document.getElementById("issueVotesSolved").innerText) + 1;
+	document.getElementById("issueVotesSolved").parentNode.setAttribute("disabled", "disabled");
 }

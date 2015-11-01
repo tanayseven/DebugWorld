@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>List of issues</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/uikit.min.css" />
+</head>
+<body onload="getLocation()">
+    <div class="uk-grid">
+        <div class="uk-width-9-10 uk-container-center" id="pageContent">
+            <p id="demo"></p>
+            <h1>Submit Grievance</h1>
+            <p><a href="list_issues.html">&larr; Go back to the list</a></p>
+
+            <form class="uk-form uk-form-stacked" name="complaint_register" id="complaint_register" onsubmit="return validateForm();" method="post">                
+
+                <div class="uk-form-row" >
+                    <label class="uk-form-label">Location Co-ordinates</label>
+                    <div class="uk-grid">
+                        <div class="uk-width-1-2"><label>Latitude<label><p class="uk-text-bold" name="latitude" id="latitude"></p></div>
+                        <div class="uk-width-1-2"><label>Longitude</label><p class="uk-text-bold" name="longitude" id="longitude"></p></div>
+                        <div class="uk-width-1-2"><label>City<label><p class="uk-text-bold" name="city" id="city"></p></div>
+                        <div class="uk-width-1-2"><label>Country</label><p class="uk-text-bold" name="country" id="country"></p></div>
+                        <div style="position:relative" name="issueLocation" id="issueLocation"></div> 
+                    </div>
+                </div>
+
+                <div class="uk-form-row">
+                    <label class="uk-form-label">Problem Title</label>
+                    <div class="uk-form-controls">
+                        <input type="text" name="prob_title" id="prob_title" placeholder="Type the title over here">
+                        <p class="uk-form-help-block" name="prob_title_err" id="prob_title_err"></p>
+                    </div>
+                </div>
+                
+                <div class="uk-form-row">
+                    <label class="uk-form-label">Problem Description</label>
+                    <div class="uk-form-controls">
+                        <textarea name="prob_desc_err" id="prob_desc" class="uk-form-width-medium" rows="7" placeholder="Type Description over here"></textarea>
+                        <p class="uk-form-help-block" name="prob_desc_err" id="prob_desc_err"></p>
+                    </div>
+                </div>
+
+                <div class="uk-form-row">
+                    <label class="uk-form-label">Problem Category</label>
+                        <textarea name="prob_cat" id="prob_cat" class="uk-form-width-medium" rows="7" placeholder="Type Tags over here"></textarea>
+                    <p class="uk-form-help-block" name="prob_cat_err" id="prob_cat_err"></p>
+                </div>
+
+                <div class="uk-form-row">
+                    <button type="submit" value="Submit" class="uk-button uk-button-primary uk-button-large uk-width-1-1 uk-margin-small-bottom">Submit</button>   
+                    <button type="reset" value="Reset" class="uk-button uk-button-primary uk-button-large uk-width-1-1" onClick="clearfield()">Reset</button>    
+                </div>
+
+            </form> 
+
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/validate_issue.js"></script>
+</body>
+</html>
