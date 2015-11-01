@@ -9,9 +9,10 @@ function IssueController(){
   }
 }
 
-IssueController.prototype.save_issue = function(data) {
+IssueController.prototype.save_issue = function(data,callback) {
   this.issue.insert(data,function (err,doc) {
     if (err) throw err;
+    callback({success:'true'});
   });
 };
 
