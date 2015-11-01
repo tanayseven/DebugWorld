@@ -128,3 +128,14 @@ function GeocodeCallback(json) {
 
 getCityAndCountry(data.location.latitude, data.location.longitude);
 */
+
+/*
+ * Votes
+ */
+
+var vote = function(voteUp) {
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', 'http://debugworld.herokuapp.com/vote', true);
+	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	xhr.send("_id=" + query.id + "&up=" + voteUp);
+}
