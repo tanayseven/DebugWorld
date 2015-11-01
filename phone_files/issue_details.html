@@ -40,7 +40,7 @@
             <p><button class="uk-button uk-button-primary uk-width-1-2"><span class="uk-icon-facebook"></span> Facebook</button><button class="uk-button uk-width-1-2"><span class="uk-icon-twitter"></span> Twitter</button></p>
             <h3><span class="uk-icon-heart-o"></span> Vote!</h3>
             <p><button class="uk-button uk-button-success uk-width-1-2" onclick="vote(true);"><span class="uk-icon-thumbs-o-up"></span> Real issue<br/>(<span id="issueVotesUp">0</span>)</button><button class="uk-button uk-button-danger uk-width-1-2" onclick="vote(false);"><span class="uk-icon-thumbs-o-down"></span> Not a problem<br/>(<span id="issueVotesDown">0</span>)</button></p>
-            <p><button class="uk-button uk-width-1-1"><span class="uk-icon-globe"></span> Problem solved<br/>(17)</button></p>
+            <p><button class="uk-button uk-width-1-1" onclick="resolve();"><span class="uk-icon-globe"></span> Problem solved<br/>(<span id="issueVotesSolved">17</span>)</button></p>
             <h3><span class="uk-icon-comments-o"></span> Comment!</h3>
             <div id="issueComments">
                 <article class="uk-comment uk-panel-box uk-margin-bottom">

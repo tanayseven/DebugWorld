@@ -147,3 +147,8 @@ var vote = function(voteUp) {
 	document.getElementById("issueVotesUp").parentNode.setAttribute("disabled", "disabled");
 	document.getElementById("issueVotesDown").parentNode.setAttribute("disabled", "disabled");
 }
+
+var resolve = function() {
+	document.getElementById("issueVotesSolved").innerText = parseInt(document.getElementById("issueVotesSolved").innerText) + 1;
+	document.getElementById("issueVotesSolved").parentNode.setAttribute("disabled", "disabled");
+}
