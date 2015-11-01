@@ -18,6 +18,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+app.use(express.static(__dirname + '/phone_files/'));
+
 var reply = function(res, i) {
   res.header("Access-Control-Allow-Origin", "*"); res.send(i);
 };
