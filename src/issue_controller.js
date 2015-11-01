@@ -9,9 +9,12 @@ function IssueController(){
   }
 }
 
-IssueController.prototype.save_issue = function(data) {
+IssueController.prototype.save_issue = function(data,callback) {
+  console.log('Reached saving');
   this.issue.insert(data,function (err,doc) {
     if (err) throw err;
+    callback({success:'true'});
+    console.log('Got it!');
   });
 };
 
@@ -21,6 +24,33 @@ IssueController.prototype.fetch_issue = function (id,callback) {
     if (err) throw err;
     callback(docs);
   });
+};
+
+IssueController.prototype.vote_issue = function (data,callback) {
+  var id = data._id.toString();
+  var up = (data.up === 'true');
+  var res = {success:'false'};
+  console.log("id" + id + ' ' + "up" + up);
+  if (up)
+  {
+    this.issue.findAndModify({
+      query: {_id:id},
+      update: { $inc: {"votes.up":1}}},
+      function (err,docs) {
+        if (err) throw err;
+        callback({success:'true'});
+      }
+    );
+  } else {
+    this.issue.findAndModify({
+      query: {_id:id},
+      update: { $inc: {"votes.down":1}}},
+      function (err,docs) {
+        if (err) throw err;
+        callback({success:'true'});
+      }
+    );
+  }
 };
 
 IssueController.prototype.fetch_issues = function (callback) {
